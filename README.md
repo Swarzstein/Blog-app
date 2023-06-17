@@ -37,7 +37,7 @@ In this project, I'm building a blog app with rails that will help users to post
 <details>
   <summary>Client</summary>
   <ul>
-   <li>N/A</li>
+   <li>Ruby on Rails</li>
 
   </ul>
 </details>
@@ -45,7 +45,7 @@ In this project, I'm building a blog app with rails that will help users to post
 <details>
   <summary>Server</summary>
   <ul>
-    <li>N/A</li>
+    <li>Ruby on Rails</li>
 
   </ul>
 </details>
