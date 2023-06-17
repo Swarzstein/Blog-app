@@ -1,0 +1,41 @@
+CREATE DATABASE blog_app;
+
+\c blog-app;
+
+CREATE TABLE "user" (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) UNIQUE NOT NULL,
+  photo VARCHAR(255),
+  bio VARCHAR(255),
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  posts_counter INT DEFAULT 0
+);
+
+CREATE TABLE post (
+  id SERIAL PRIMARY KEY,
+  author_id INT REFERENCES users(id),
+  title VARCHAR(255) NOT NULL,
+  text TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  comments_counter INT DEFAULT 0,
+  likes_counter INT DEFAULT 0
+);
+
+CREATE TABLE comment (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id),
+  post_id INT REFERENCES post(id),
+  text TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE "like" (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id),
+  post_id INT REFERENCES post(id),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
