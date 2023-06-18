@@ -1,0 +1,9 @@
+steps:
+- name: Create PostgreSQL service container  
+  uses: docker/whalesay/whalesay@v1  
+  with:    
+    image: postgres:14
+
+- name: Connect to PostgreSQL  
+  run: |   
+    psql -h localhost -p 5432 -U postgres
