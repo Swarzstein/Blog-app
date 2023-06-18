@@ -11,13 +11,6 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: 3.1.x
-      - name: Create PostgreSQL service container  
-        uses: docker/whalesay/whalesay@v1  
-        with:    
-          image: postgres:14
-      - name: Connect to PostgreSQL  
-        run: |   
-          gitPGPASSWORD=admin psql -h localhost -p 5432 -U postgres
       - name: Setup RSpec
         run: |
           [ -f Gemfile ] && bundle
