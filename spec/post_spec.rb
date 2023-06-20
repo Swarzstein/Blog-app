@@ -42,7 +42,7 @@ RSpec.describe Post, type: :model do
     let!(:author) { User.create name: 'Ravan', posts_counter: 0 }
     let!(:post) { Post.create author_id: author.id, title: 'Wings of freedom', comments_counter: 0, likes_counter: 0 }
     let!(:comment) do
-      Comment.create author_id: author.id, post_id: post.id, text: 'Hola!'
+      Comment.create user_id: author.id, post_id: post.id, text: 'Hola!'
     end
 
     it 'should return recent comments' do

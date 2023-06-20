@@ -5,7 +5,7 @@ RSpec.describe Comment, type: :model do
     let!(:author) { User.create name: 'John Doe', posts_counter: 0 }
     let!(:post) { Post.create author_id: author.id, title: "God's Creations", comments_counter: 0, likes_counter: 0 }
     let!(:comment) do
-      Comment.create author_id: author.id, post_id: post.id, text: 'Allahu Akbar! God is GREATTTTT!!'
+      Comment.create user_id: author.id, post_id: post.id, text: 'Allahu Akbar! God is GREATTTTT!!'
     end
 
     it 'should increment comments_counter by one' do
