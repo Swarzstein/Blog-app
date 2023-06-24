@@ -66,6 +66,31 @@ h1 {
   align-self: end;
 }
 
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: solid 2px black;
+  padding: 10px;
+  gap: 10px;
+}
+
+.post > h3 {
+  margin: 0 10px;
+  align-self: start;
+}
+
+.post > p {
+  align-self: start;
+}
+
+.post > span {
+  font-size: small;
+  align-self: end;
+}
+
 #user_info {
   display: flex;
   justify-content: space-between;
@@ -90,7 +115,7 @@ h1 {
 }
 
 #user_name_and_posts > p {
-  font-size:small;
+  font-size: small;
   align-self: end;
 }
 
@@ -100,31 +125,6 @@ h1 {
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-
-.post {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border: solid 2px black;
-  padding: 10px;
-  gap: 10px;
-}
-
-.post > h3 {
-  margin: 0 10px;
-  align-self: start;
-}
-
-.post > p {
-  align-self: start;
-}
-
-.post > span {
-  font-size: small;
-  align-self: end;
 }
 
 .cropped-text {
