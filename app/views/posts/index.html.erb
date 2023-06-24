@@ -19,6 +19,7 @@
   </div>
   <div id="user_posts">
     <% @posts.each do |post| %>
+      <a href=<%= "posts/#{post.id}" %>>
       <div class="user_post">
         <div class="post">
           <h3><%= post.title %></h3>
@@ -37,6 +38,7 @@
           <% end %>
         </div>
       </div>
+      </a>
     <% end %>
   </div>
     <button>Pagination</button>

@@ -25,14 +25,18 @@
   </div>
   <div id="posts">
     <% @posts.each do |post| %>
+    <a href=<%= "#{@user.id}/posts/#{post.id}" %>>
       <div class="post">
         <h3><%= post.title %></h3>
         <p class="cropped-text"><%= post.text %></p>
         <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
       </div>
+    </a>
     <% end %>
   </div>
+  <a href=<%= "#{@user.id}/posts" %>>
     <button>See all posts</button>
+  </a>
   </div>
 </body>
 </html>
