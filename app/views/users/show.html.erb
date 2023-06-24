@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>User <%= params[:id] %></title>
+  <%= stylesheet_link_tag "styles" %>
 </head>
 <body>
-  <h1>User <%= params[:id] %></h1>
-  <p>Find me in app/views/users/index.html.erb</p>
+  <div class="container">
   <div id="user_info">
-    <div id="user_image">
+    <div class="user_image">
       <% if @user.photo %>
         <img src=<%= @user.photo %> alt="User Photo">
       <% else %>
@@ -20,16 +20,19 @@
     </div>
   </div>
   <div id="bio">
+    <h3>Bio</h3>
     <p><%= @user.bio %></p>
   </div>
   <div id="posts">
     <% @posts.each do |post| %>
       <div class="post">
         <h3><%= post.title %></h3>
-        <p><%= post.text %></p>
+        <p class="cropped-text"><%= post.text %></p>
         <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
       </div>
     <% end %>
+  </div>
+    <button>See all posts</button>
   </div>
 </body>
 </html>
