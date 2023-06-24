@@ -6,5 +6,36 @@
 <body>
   <h1>Posts from user 1</h1>
   <p>Find me in app/views/posts/index.html.erb</p>
+  <div id="user_head">
+    <div id="user_image">
+      <% if @user.photo %>
+        <img src=<%= @user.photo %> alt="User Photo">
+      <% else %>
+        <img src="no_pic.png" alt="User Photo">
+      <% end %>
+    </div>
+    <div id="user_name_and_posts">
+      <h1><%= @user.name %></h1>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <div id="user_posts">
+    <% @posts.each do |post| %>
+      <div class="user_post">
+        <div class="post">
+          <h3><%= post.title %></h3>
+          <p maxlength="150"><%= post.text %></p>
+          <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
+        </div>
+        <div class="comments">
+          <% @comments.each do |comment| %>
+            <div class="comment">
+              <p><%= comment["user"] %>: <%= comment["comment"] %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </body>
 </html>

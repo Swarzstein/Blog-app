@@ -6,5 +6,20 @@
 <body>
   <h1>Users list</h1>
   <p>Find me in app/views/users/index.html.erb</p>
+  <div>
+    <%@users.each do |user|%>
+      <div>
+      <% if user.photo %>
+        <img src=<%= user.photo %> alt="User Photo">
+      <% else %>
+        <img src="no_pic.png" alt="User Photo">
+      <% end %>
+      </div>
+      <div>
+        <h3><%= user.name %></h3>
+        <p>Number of posts: <%= user.posts_counter %></p>
+      </div>
+    <%end%>
+  </div>
 </body>
 </html>

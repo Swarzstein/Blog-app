@@ -6,5 +6,17 @@
 <body>
   <h1>Post <%= params[:id] %> from User <%= params[:user_id] %></h1>
   <p>Find me in app/views/posts/show.html.erb</p>
+  <div id="post">
+    <h3><%= @post.title %> by <%= @user.name %></h3>
+    <span>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
+    <p><%= @post.text %></p>
+  </div>
+  <div id="comments">
+    <% @comments.each do |comment| %>
+      <div class="comment">
+        <p><%= comment[:user] %>: <%= comment[:comment] %></p>
+      </div>
+    <% end %>
+  </div>
 </body>
 </html>

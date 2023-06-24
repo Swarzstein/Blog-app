@@ -1,9 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Malik44', photo: 'https://malik44.jpg', bio: 'Sailor', posts_counter: 0) }
+  subject { User.create(name: 'Malik44', photo: 'https://malik44.jpg', bio: 'Sailor', posts_counter: 0) }
 
   before { subject.save }
+
+  context 'when created' do
+    it 'has an id' do
+      expect(subject.id).not_to be_nil
+    end
+  end
 
   context 'when name is not present' do
     before { subject.name = nil }
