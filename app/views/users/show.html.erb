@@ -2,9 +2,41 @@
 <html>
 <head>
   <title>User <%= params[:id] %></title>
+  <%= stylesheet_link_tag "styles" %>
 </head>
 <body>
-  <h1>User <%= params[:id] %></h1>
-  <p>Find me in app/views/users/index.html.erb</p>
+  <div class="container">
+  <div id="user_info">
+    <div class="user_image">
+      <% if @user.photo %>
+        <img src=<%= @user.photo %> alt="User Photo">
+      <% else %>
+        <img src="no_pic.png" alt="User Photo">
+      <% end %>
+    </div>
+    <div id="user_name_and_posts">
+      <h1><%= @user.name %></h1>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <div id="bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+  <div id="posts">
+    <% @posts.each do |post| %>
+    <a href=<%= "#{@user.id}/posts/#{post.id}" %>>
+      <div class="post">
+        <h3><%= post.title %></h3>
+        <p class="cropped-text"><%= post.text %></p>
+        <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
+      </div>
+    </a>
+    <% end %>
+  </div>
+  <a href=<%= "#{@user.id}/posts" %>>
+    <button>See all posts</button>
+  </a>
+  </div>
 </body>
 </html>
