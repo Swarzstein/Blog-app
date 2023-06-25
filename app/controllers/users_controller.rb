@@ -8,16 +8,16 @@ class UsersController < ApplicationController
     @posts = @user.most_recent_posts
   end
 
-  #def new
+  # def new
   #  @user = User.new
-  #end
+  # end
 
-  #def create
+  # def create
   #  @user = User.create(params[:user])
   #  if @user.save
   #    redirect_to user_path(@user.id)
   #  else
   #    render :new
   #  end
-  #end
+  # end
 end

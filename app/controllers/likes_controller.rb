@@ -1,7 +1,9 @@
 # Purpose: Controller for likes
-def create
-  @like = Like.new(like_params)
-  @like.user = current_user
-  @like.save
-  redirect_to post_path(@like.post)
+class LikesController < ApplicationController
+  def create
+    @post = Post.find(params[:post_id])
+    @like = Like.new(user_id: current_user.id, post_id: @post.id)
+
+    redirect_to post_path(@post)
+  end
 end
