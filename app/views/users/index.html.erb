@@ -6,6 +6,9 @@
 </head>
 <body>
   <h1>Users list</h1>
+  <a href=<%= "/users/#{@current_user.id}/posts/new"%> >
+    <button>New Post</button>
+    </a>
   <div class="container">
     <%@users.each do |user|%>
       <a href=<%= "users/#{user.id}"%>>
