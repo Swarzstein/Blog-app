@@ -7,12 +7,13 @@
   <div class="user_post">
   <div class="post">
     <h3><%= @post.title %> by <%= @user.name %></h3>
-    <span>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
+    <span>Likes: <%= @post.likes_counter %>, Comments: <%= @post.comments_counter %></span>
+    
     <!-- likes button form -->
-    <%= form_with(model: @post, url: user_post_path, method: :post, local: true) do |form| %>
+    <%= form_with model: Like, url: user_post_likes_path(@post.author_id, @post.id ), method: :post do |form| %>
       <%= form.hidden_field :user_id, value: @current_user.id %>
       <%= form.hidden_field :post_id, value: @post.id %>
-      <%= form.submit 'Like' %>
+      <%= form.submit "Like" %>
     <% end %>
     <p><%= @post.text %></p>
   </div>
@@ -29,7 +30,7 @@
   </div>
   <!-- form for a new comment -->
   <div class="new_comment">
-    <%= form_with(model: @comment, url: user_post_path, method: :post, local: true) do |form| %>
+    <%= form_with(model: Comment, url: user_post_comments_path(@post.author_id, @post.id ), method: :post, local: true) do |form| %>
       <span><%= @current_user.name %>: </span>
       <%= form.text_field :text, placeholder: "Enter your comment here" %>
       <%= form.hidden_field :user_id, value: @current_user.id %>
