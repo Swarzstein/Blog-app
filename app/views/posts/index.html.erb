@@ -27,10 +27,10 @@
           <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
         </div>
         <div class="comments">
-          <% if @comments.length>=1 %>
-          <% @comments.each do |comment| %>
+          <% if post.comments.length>=1 %>
+          <% post.comments.each do |comment| %>
             <div class="comment">
-              <p><%= comment[:user] %>: <%= comment[:comment] %></p>
+              <p><%= comment.user.name %>: <%= comment.text %></p>
             </div>
           <% end %>
           <% else %>

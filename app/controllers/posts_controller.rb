@@ -4,11 +4,12 @@ class PostsController < ApplicationController
   def index
     @user = User.find_by_id(params[:user_id]) # params[:user_id] is the id of the user
     @posts = Post.where(author_id: params[:user_id])
-    @comments = []
-    @posts.map do |post|
-      @comments = get_comments(post, 'index')
+    @posts.each do |post|
+      post.comments = post.most_recent_comments
     end
+    #@posts = Post.includes(:title, :text, comments: [:text, user_name: [:name]])
   end
+  # users = User.includes(:address, friends: [:address, :followers])
 
   def show
     @current_user = current_user
