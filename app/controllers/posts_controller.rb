@@ -3,19 +3,12 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find_by_id(params[:user_id]) # params[:user_id] is the id of the user
-    @posts = Post.where(author_id: params[:user_id])
-    @posts.each do |post|
-      post.comments = post.most_recent_comments
-    end
-    #@posts = Post.includes(:title, :text, comments: [:text, user_name: [:name]])
+    @posts = Post.where(author_id: params[:user_id]).includes(:most_recent_comments)
   end
-  # users = User.includes(:address, friends: [:address, :followers])
 
   def show
     @current_user = current_user
-    @user = User.find_by_id(params[:user_id]) # params[:user_id] is the id of the user
-    @post = Post.find_by_id(params[:id]) # params[:id] is the id of the post
-    @comments = get_comments(@post, 'show')
+    @post = Post.find_by_id(params[:id])
   end
 
   def new
@@ -39,15 +32,5 @@ class PostsController < ApplicationController
 
   def set_current_user
     @current_user = current_user
-  end
-
-  def get_comments(post, type)
-    @comments = []
-    comments = type == 'show' ? Comment.where(post_id: post.id) : post.most_recent_comments
-    comments.each do |comment|
-      user = User.find_by_id(comment.user_id)
-      @comments << { user: user.name, comment: comment.text }
-    end
-    @comments
   end
 end

@@ -57,6 +57,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development do
