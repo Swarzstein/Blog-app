@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Users Post Index', type: :feature do
   before :each do
-    @user = User.create(name: 'Akai321', photo: 'https://Akaiiii.jpg', bio: 'Martial Artist')
+    @user = User.create(name: 'Muhammed-ali', photo: 'https://Akaiiii.jpg', bio: 'Martial Artist')
     @user2 = User.create(name: 'Bonzai73', photo: 'https://bon-bon.jpg', bio: 'Monk of the mountains')
     @post1 = Post.create(author_id: @user.id, title: 'The way of the Water',
                          text: 'In martial arts, the way of the water is the way of the soft and yielding')
@@ -21,7 +21,7 @@ describe 'Users Post Index', type: :feature do
   end
 
   scenario "I can see the user's username" do
-    expect(page).to have_content('Akai321')
+    expect(page).to have_content('Muhammed-ali')
   end
 
   scenario 'I can see the number of posts the user has written' do
