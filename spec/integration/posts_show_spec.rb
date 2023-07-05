@@ -5,8 +5,8 @@ describe 'User Post Show Page', type: :feature do
     user1 = User.create(name: 'Mike-tyson', photo: 'https://mike-tyson.jpg', bio: 'Boxing Master')
     user2 = User.create(name: 'Kuro321', photo: 'https://Kuroooo.jpg', bio: 'Jiu Jitsu Master')
     user3 = User.create(name: 'Bonzai73', photo: 'https://bon-bon.jpg', bio: 'Monk of the mountains')
-    post = Post.create(author_id: user1.id, title: 'The way of the Water',
-                       text: 'In martial arts, the way of the water is the way of the soft and yielding')
+    post = Post.create(author_id: user1.id, title: 'The boxing master',
+                       text: 'The Boxing Master is a martial artist who has mastered the art of boxing')
     Comment.create(user_id: user2.id, post_id: post.id,
                    text: 'Respects for Chinese martial arts, but I prefer Japanese')
     Comment.create(user_id: user3.id, post_id: post.id, text: 'I like both!')
@@ -16,7 +16,7 @@ describe 'User Post Show Page', type: :feature do
   end
 
   scenario "I can see the post's title" do
-    expect(page).to have_content('The way of the Water')
+    expect(page).to have_content('The boxing master')
   end
 
   scenario 'I can see who wrote the post' do
@@ -32,7 +32,7 @@ describe 'User Post Show Page', type: :feature do
   end
 
   scenario 'I can see the post body' do
-    expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')
+    expect(page).to have_content('The Boxing Master')
   end
 
   scenario 'I can see the username of each commentor' do
