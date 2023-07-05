@@ -19,7 +19,7 @@
   </div>
   <div id="user_posts">
     <% @posts.each do |post| %>
-      <a href=<%= user_post(post.author_id, post.id) %>>
+      <a href=<%= user_post_path(post.author_id, post.id) %>>
       <div class="user_post">
         <div class="post">
           <h3><%= post.title %></h3>
@@ -42,6 +42,5 @@
     <% end %>
   </div>
     <button>Pagination</button>
-    
 </body>
 </html>
