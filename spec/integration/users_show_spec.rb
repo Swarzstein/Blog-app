@@ -6,11 +6,13 @@ describe 'Users Show', type: :feature do
   end
 
   let! :post1 do
-    Post.create(author_id: user.id, title: 'The way of the Water', text: 'In martial arts, the way of the water is the way of the soft and yielding')
+    Post.create(author_id: user.id, title: 'The way of the Water',
+                text: 'In martial arts, the way of the water is the way of the soft and yielding')
   end
 
   let! :post2 do
-    Post.create(author_id: user.id, title: 'Amaterasu', text: 'Amaterasu is the goddess of the sun and the universe, the ultimate source of all life')
+    Post.create(author_id: user.id, title: 'Amaterasu',
+                text: 'Amaterasu is the goddess of the sun and the universe, the ultimate source of all life')
   end
 
   let! :post3 do
@@ -26,8 +28,8 @@ describe 'Users Show', type: :feature do
   scenario "I can see the user's username" do
     expect(page).to have_content('Akai321')
   end
- 
-  scenario "I can see the number of posts the user has written" do
+
+  scenario 'I can see the number of posts the user has written' do
     expect(page).to have_content('Number of posts: 3')
   end
 

@@ -5,8 +5,12 @@ RSpec.describe 'Users Index', type: :feature do
     author1 = User.create(name: 'Malik44', photo: 'https://malik44.jpg', bio: 'Sailor')
     author2 = User.create(name: 'Akai321', photo: 'https://Akaiiii.jpg', bio: 'Martial Artist')
     Post.create(title: 'Legacy', text: 'The legacy of the righteous is a blessing', author_id: author1.id)
-    Post.create(title: 'The way of the Water', text: 'In martial arts, the way of the water is the way of the soft and yielding', author_id: author2.id)
-    Post.create(title: 'Amaterasu', text: 'Amaterasu is the goddess of the sun and the universe, the ultimate source of all life', author_id: author2.id)
+    Post.create(title: 'The way of the Water',
+                text: 'In martial arts, the way of the water is the way of the soft and yielding',
+                author_id: author2.id)
+    Post.create(title: 'Amaterasu',
+                text: 'Amaterasu is the goddess of the sun and the universe, the ultimate source of all life',
+                author_id: author2.id)
   end
 
   scenario 'I can see the username of all other users' do
