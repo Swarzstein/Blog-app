@@ -25,7 +25,7 @@
   </div>
   <div id="posts">
     <% @posts.each do |post| %>
-    <a href=<%= "#{@user.id}/posts/#{post.id}" %>>
+    <a href=<%= user_post_path(@user.id, post.id) %>>
       <div class="post">
         <h3><%= post.title %></h3>
         <p class="cropped-text"><%= post.text %></p>
@@ -34,7 +34,7 @@
     </a>
     <% end %>
   </div>
-  <a href=<%= "#{@user.id}/posts" %>>
+  <a href=<%= user_posts_path(@user.id) %>>
     <button>See all posts</button>
   </a>
   </div>

@@ -11,7 +11,7 @@
     </a>
   <div class="container">
     <%@users.each do |user|%>
-      <a href=<%= "users/#{user.id}"%>>
+      <a href=<%= user_path(user.id)%>>
       <div class="user">
         <div class="user_image">
         <% if user.photo %>
