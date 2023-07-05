@@ -4,7 +4,7 @@ RSpec.describe 'Users Index', type: :feature do
   before :each do
     author1 = User.create(name: 'Abebe', photo: 'https://Abebe.jpg', bio: 'Abebe bio')
     author2 = User.create(name: 'Akai321', photo: 'https://Akaiiii.jpg', bio: 'Martial Artist')
-    Post.create(title: 'Legacy', text: 'The legacy of the righteous is a blessing', author_id: author1.id)
+    Post.create(title: 'Legese Title', text: 'The Legese Title of the righteous is a blessing and blessing', author_id: author1.id)
     Post.create(title: 'The way of the Water',
                 text: 'In martial arts, the way of the water is the way of the soft and yielding',
                 author_id: author2.id)
@@ -36,6 +36,6 @@ RSpec.describe 'Users Index', type: :feature do
     click_link 'Abebe'
     expect(page).to have_content('Abebe')
     expect(page).to have_content('Abebe bio')
-    expect(page).to have_content('Legacy')
+    expect(page).to have_content('Legese Title')
   end
 end
