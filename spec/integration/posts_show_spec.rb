@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User Post Show Page', type: :feature do
   before :each do
-    user1 = User.create(name: 'Akai321', photo: 'https://Akaiiii.jpg', bio: 'Martial Artist')
+    user1 = User.create(name: 'Mike-tyson', photo: 'https://mike-tyson.jpg', bio: 'Boxing Master')
     user2 = User.create(name: 'Kuro321', photo: 'https://Kuroooo.jpg', bio: 'Jiu Jitsu Master')
     user3 = User.create(name: 'Bonzai73', photo: 'https://bon-bon.jpg', bio: 'Monk of the mountains')
     post = Post.create(author_id: user1.id, title: 'The way of the Water',
@@ -20,7 +20,7 @@ describe 'User Post Show Page', type: :feature do
   end
 
   scenario 'I can see who wrote the post' do
-    expect(page).to have_content('Akai321')
+    expect(page).to have_content('Mike-tyson')
   end
 
   scenario 'I can see how many comments it has' do
