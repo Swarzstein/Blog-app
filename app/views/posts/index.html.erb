@@ -19,7 +19,7 @@
   </div>
   <div id="user_posts">
     <% @posts.each do |post| %>
-      <a href=<%= "posts/#{post.id}" %>>
+      <a href=<%= user_post_path(post.author_id, post.id) %>>
       <div class="user_post">
         <div class="post">
           <h3><%= post.title %></h3>
@@ -27,10 +27,10 @@
           <span>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
         </div>
         <div class="comments">
-          <% if @comments.length>=1 %>
-          <% @comments.each do |comment| %>
+          <% if post.comments.length>=1 %>
+          <% post.comments.each do |comment| %>
             <div class="comment">
-              <p><%= comment[:user] %>: <%= comment[:comment] %></p>
+              <p><%= comment.user.name %>: <%= comment.text %></p>
             </div>
           <% end %>
           <% else %>
@@ -42,6 +42,5 @@
     <% end %>
   </div>
     <button>Pagination</button>
-    
 </body>
 </html>
