@@ -26,6 +26,18 @@ h1 {
   margin-bottom: 20px;
 }
 
+.field > input {
+  padding: 2px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.actions > input {
+  padding: 2px;
+  width: 100%;
+  margin: 10px 0;
+}
+
 .container {
   width: 80%;
   height: 100%;
