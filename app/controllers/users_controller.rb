@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @current_user = current_user
-    #take the active session id
+    # take the active session id
     @session_id = session[:session_id]
   end
 
@@ -12,15 +12,15 @@ class UsersController < ApplicationController
   end
 end
 
-  # def new
-  #  @user = User.new
-  # end
+# def new
+#  @user = User.new
+# end
 
-  # def create
-  #  @user = User.create(params[:user])
-  #  if @user.save
-  #    redirect_to user_path(@user.id)
-  #  else
-  #    render :new
-  #  end
-  # end
+# def create
+#  @user = User.create(params[:user])
+#  if @user.save
+#    redirect_to user_path(@user.id)
+#  else
+#    render :new
+#  end
+# end
