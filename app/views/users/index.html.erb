@@ -6,7 +6,7 @@
 </head>
 <body>
 
-  <%= link_to "Log Out", @sign_out_current_user_path, method: :delete %>
+  <%= link_to 'Logout', destroy_user_session_path, 'data-turbo-method': :delete %>
 
   <h1>Users list</h1>
   <a href=<%= new_user_post_path(@current_user)%> >
