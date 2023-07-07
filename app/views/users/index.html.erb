@@ -5,8 +5,11 @@
   <%= stylesheet_link_tag "styles" %>
 </head>
 <body>
+
+  <%= link_to "Log Out", @sign_out_current_user_path, method: :delete %>
+
   <h1>Users list</h1>
-  <a href=<%= "/users/#{@current_user.id}/posts/new"%> >
+  <a href=<%= new_user_post_path(@current_user)%> >
     <button>New Post</button>
     </a>
   <div class="container">
