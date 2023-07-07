@@ -102,13 +102,19 @@ To run the program use command, rails server
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 
 👤 **Juan Zorrilla**
 
 - GitHub: [@Swarzstein](https://github.com/Swarzstein)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/juan-a-zorrilla/)
+
+👤 **Muhammed Berisso**
+
+- GitHub: [Github](https://github.com/muhammedb8826)
+- GitHub: [Twitter](https://twitter.com/muhammedb8826)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammedb8826/)
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
