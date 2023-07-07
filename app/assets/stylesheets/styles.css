@@ -29,14 +29,12 @@ h1 {
 .field > input {
   padding: 2px;
   width: 100%;
-  width: -webkit-fill-available;
   margin: 10px 0;
 }
 
 .actions > input {
   padding: 2px;
   width: 100%;
-  width: -webkit-fill-available;
   margin: 10px 0;
 }
 
